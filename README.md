@@ -12,6 +12,6 @@ protractor conf.js
 Cover functionality:
 1. Create new Computer
 2. Find computer by name
-3. Open finded computer
+3. Open computer from grid
 4. Edit created computer
 5. Deleted created computer
