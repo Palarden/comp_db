@@ -1,3 +1,5 @@
+"use strict";
+
 var create_edit_page = function() {
 
     this.addNewComputer = function() {
@@ -8,24 +10,36 @@ var create_edit_page = function() {
         element(by.xpath('//*[@id="name"]')).sendKeys(name);
     };
 
+    this.clearName = function(){
+        element(by.xpath('//*[@id="name"]')).clear();
+    }
+
     this.getName = function (){
-        element(by.id('name')).getText();
+        return element(by.id('name')).getAttribute('value');
     };
 
     this.inputIntroduced = function(name){
         element(by.id('introduced')).sendKeys(name);
     };
 
+    this.clearIntroduced = function() {
+        element(by.id('introduced')).clear();
+    };
+
     this.getIntroduced = function(){
-        element(by.id('introduced')).getAttribute('value');
+        return element(by.id('introduced')).getAttribute('value');
     };
 
     this.inputDiscontinued = function(name){
         element(by.id('discontinued')).sendKeys(name);
     };
 
+    this.clearDiscontinued = function() {
+        element(by.id('discontinued')).clear();
+    };
+
     this.getDiscontinued = function(){
-        element(by.id('discontinued')).getAttribute('value');
+        return element(by.id('discontinued')).getAttribute('value');
     };
 
     this.companySelect = function () {
@@ -33,8 +47,8 @@ var create_edit_page = function() {
     };
 
     this.deleteComputer = function () {
-        element(by.css('.btn_danger')).click();
-    }
+        element(by.css('.btn.danger')).click();
+    };
 };
 
 module.exports = new create_edit_page();
