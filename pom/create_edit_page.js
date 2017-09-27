@@ -12,7 +12,7 @@ var create_edit_page = function() {
 
     this.clearName = function(){
         element(by.xpath('//*[@id="name"]')).clear();
-    }
+    };
 
     this.getName = function (){
         return element(by.id('name')).getAttribute('value');

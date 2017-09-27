@@ -19,9 +19,7 @@ describe('Computer Database', function() {
         create_edit_page.inputIntroduced('2009-11-01'); //expect(create_edit_page.getIntroduced()).toEqual('2009-11-01');
         create_edit_page.inputDiscontinued('2010-11-01'); //expect(create_edit_page.getDiscontinued()).toEqual('2010-11-01');
         create_edit_page.companySelect().$('[value="31"]').click();
-        browser.pause(5000);
         create_edit_page.addNewComputer();
-        browser.pause(15000);
     });
 
     it ('should find computers by name', function() {
@@ -34,7 +32,6 @@ describe('Computer Database', function() {
         main_page.searchBox('Cray Jaguar');
         main_page.searchSubmit();
         main_page.searchResult(1);
-        browser.pause(5000);
         expect(create_edit_page.getName()).toEqual('Cray Jaguar');
         expect(create_edit_page.getIntroduced()).toEqual('2009-11-01');
         expect(create_edit_page.getDiscontinued()).toEqual('2010-11-01');
@@ -47,7 +44,6 @@ describe('Computer Database', function() {
         main_page.searchResult(1);
         create_edit_page.clearName();
         create_edit_page.inputName('Cray XT5');
-        browser.sleep(5000);
         create_edit_page.clearIntroduced();
         create_edit_page.inputIntroduced('2007-11-06');
         create_edit_page.clearDiscontinued();
