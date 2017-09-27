@@ -2,8 +2,9 @@
 
 describe('Computer Database', function() {
     var main_page = require('../pom/main_page_pom.js');
-    var EC = protractor.ExpectedConditions;
-    //var computer_name = 'Cray+Jaguar';
+    /* var EC = protractor.ExpectedConditions;
+    var computer_name = 'Cray+Jaguar';
+     */
     var create_edit_page = require('../pom/create_edit_page.js');
 
     beforeEach(function() {
@@ -14,12 +15,9 @@ describe('Computer Database', function() {
 
     it ('should add new computer', function () {
         var create_edit_page = main_page.addNewComputer();
-        create_edit_page.inputName('Cray Jaguar');
-        //expect(create_edit_page.getName()).toEqual('Cray Jaguar');
-        create_edit_page.inputIntroduced('2009-11-01');
-        //expect(create_edit_page.getIntroduced()).toEqual('2009-11-01');
-        create_edit_page.inputDiscontinued('2010-11-01');
-        //expect(create_edit_page.getDiscontinued()).toEqual('2010-11-01');
+        create_edit_page.inputName('Cray Jaguar'); //expect(create_edit_page.getName()).toEqual('Cray Jaguar');
+        create_edit_page.inputIntroduced('2009-11-01'); //expect(create_edit_page.getIntroduced()).toEqual('2009-11-01');
+        create_edit_page.inputDiscontinued('2010-11-01'); //expect(create_edit_page.getDiscontinued()).toEqual('2010-11-01');
         create_edit_page.companySelect().$('[value="31"]').click();
         browser.pause(5000);
         create_edit_page.addNewComputer();
@@ -28,10 +26,8 @@ describe('Computer Database', function() {
 
     it ('should find computers by name', function() {
         main_page.searchBox('Cray Jaguar');
-        main_page.searchSubmit();
-        //browser.wait(EС.textToBePresentInElement(main_page.searchBox), 'Cray Jaguar', 5000);
-        expect(main_page.searchRequest()).toEqual('Cray Jaguar');
-        //expect(browser.getCurrentUrl()).toEqual('http://computer-database.herokuapp.com/computers' + '?f=' + computer_name);
+        main_page.searchSubmit(); //browser.wait(EС.textToBePresentInElement(main_page.searchBox), 'Cray Jaguar', 5000);
+        expect(main_page.searchRequest()).toEqual('Cray Jaguar'); //expect(browser.getCurrentUrl()).toEqual('http://computer-database.herokuapp.com/computers' + '?f=' + computer_name);
     });
 
     it ('should open created computers', function () {
@@ -42,6 +38,7 @@ describe('Computer Database', function() {
         expect(create_edit_page.getName()).toEqual('Cray Jaguar');
         expect(create_edit_page.getIntroduced()).toEqual('2009-11-01');
         expect(create_edit_page.getDiscontinued()).toEqual('2010-11-01');
+        expect(create_edit_page.getCompany()).toEqual('Cray');
     });
 
     it ('should edit opened computers', function () {
