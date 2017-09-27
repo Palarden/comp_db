@@ -7,11 +7,11 @@ var create_edit_page = function() {
     };
 
     this.inputName = function (name) {
-        element(by.xpath('//*[@id="name"]')).sendKeys(name);
+        element(by.id('name')).sendKeys(name);
     };
 
     this.clearName = function(){
-        element(by.xpath('//*[@id="name"]')).clear();
+        element(by.id('name')).clear();
     };
 
     this.getName = function (){
