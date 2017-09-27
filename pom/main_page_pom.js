@@ -25,8 +25,13 @@ var main_page = function() {
         element(by.id('searchsubmit')).click();
     };
 
-    this.searchResult = function(number) { //where number result in row
-        return element(by.className('computers zebra-striped')).$('#main > table > tbody > tr:nth-child('+number+') > td:nth-child(1) > a').click();
+    this.checkSearchResult = function(number) { //where number result in row
+        return element(by.className('computers zebra-striped')).$('#main > table > tbody > tr:nth-child('+number+') > td:nth-child(1) > a').getText();
+    };
+
+
+    this.openSearchResult = function(number) { //where number result in row
+        element(by.className('computers zebra-striped')).$('#main > table > tbody > tr:nth-child('+number+') > td:nth-child(1) > a').click();
     };
 
     /*this.computerTable = function(){
