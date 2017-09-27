@@ -25,13 +25,13 @@ describe('Computer Database', function() {
     it ('should find computers by name', function() {
         main_page.searchBox('Cray Jaguar');
         main_page.searchSubmit(); //browser.wait(EС.textToBePresentInElement(main_page.searchBox), 'Cray Jaguar', 5000);
-        expect(main_page.searchRequest()).toEqual('Cray Jaguar'); //expect(browser.getCurrentUrl()).toEqual('http://computer-database.herokuapp.com/computers' + '?f=' + computer_name);
+        expect(main_page.checkSearchResult(1)).toEqual('Cray Jaguar'); //expect(browser.getCurrentUrl()).toEqual('http://computer-database.herokuapp.com/computers' + '?f=' + computer_name);
     });
 
     it ('should open created computers', function () {
         main_page.searchBox('Cray Jaguar');
         main_page.searchSubmit();
-        main_page.searchResult(1);
+        main_page.openSearchResult(1);
         expect(create_edit_page.getName()).toEqual('Cray Jaguar');
         expect(create_edit_page.getIntroduced()).toEqual('2009-11-01');
         expect(create_edit_page.getDiscontinued()).toEqual('2010-11-01');
@@ -41,7 +41,7 @@ describe('Computer Database', function() {
     it ('should edit opened computers', function () {
         main_page.searchBox('Cray Jaguar');
         main_page.searchSubmit();
-        main_page.searchResult(1);
+        main_page.openSearchResult(1);
         create_edit_page.clearName();
         create_edit_page.inputName('Cray XT5');
         create_edit_page.clearIntroduced();
@@ -54,7 +54,10 @@ describe('Computer Database', function() {
     it ('should delete created computers', function () {
         main_page.searchBox('Cray XT5');
         main_page.searchSubmit();
-        main_page.searchResult(1);
+        main_page.openSearchResult(1);
         create_edit_page.deleteComputer();
+        main_page.searchBox('Cray XT');
+        main_page.searchSubmit();
+        expect(main_page.checkSearchResult(1)).not.toContain('Cray XT5');
     });
 });
