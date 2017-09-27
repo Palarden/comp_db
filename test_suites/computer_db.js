@@ -42,6 +42,7 @@ describe('Computer Database', function() {
         expect(create_edit_page.getName()).toEqual('Cray Jaguar');
         expect(create_edit_page.getIntroduced()).toEqual('2009-11-01');
         expect(create_edit_page.getDiscontinued()).toEqual('2010-11-01');
+        expect(create_edit_page.getCompany()).toEqual('Cray');
     });
 
     it ('should edit opened computers', function () {

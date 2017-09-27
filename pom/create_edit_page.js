@@ -46,6 +46,10 @@ var create_edit_page = function() {
         return element(by.id('company'));
     };
 
+    this.getCompany = function () {
+       return element(by.css('option:checked')).getAttribute('text');
+    };
+
     this.deleteComputer = function () {
         element(by.css('.btn.danger')).click();
     };
