@@ -2,7 +2,23 @@
 
 var create_edit_page = function() {
 
-    this.addNewComputer = function() {
+    this.addNewComputer = function (name, date_introduced, date_discontinued, company_number) {
+        return element(by.id('name')).sendKeys(name).then(function(){
+            return element(by.id('introduced')).sendKeys(date_introduced)
+        }).then(function () {
+            return element(by.id('discontinued')).sendKeys(date_discontinued);
+        }).then(function () {
+            return element(by.id('company')).$('[value='+company_number+']').click();
+        }).then(function () {
+            return element(by.css('.btn.primary')).click();
+        })
+    }
+};
+
+
+
+
+   /* this.addNewComputer = function() {
         return element(by.css('.btn.primary')).click();
     };
 
@@ -53,6 +69,6 @@ var create_edit_page = function() {
     this.deleteComputer = function () {
         return element(by.css('.btn.danger')).click();
     };
-};
+};*/
 
 module.exports = new create_edit_page();

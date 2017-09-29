@@ -8,7 +8,7 @@ var main_page = function() {
         browser.get('http://computer-database.herokuapp.com/computers');
     };
 
-    this.addNewComputer = function() {
+    this.addComputer = function() {
         element(by.id('add')).click();
         return create_edit_page;
     };
