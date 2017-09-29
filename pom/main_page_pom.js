@@ -1,5 +1,7 @@
 "use strict";
 
+var create_edit_page =  require('./create_edit_page.js');
+
 var main_page = function() {
 
     this.get = function () {
@@ -8,11 +10,11 @@ var main_page = function() {
 
     this.addNewComputer = function() {
         element(by.id('add')).click();
-        return require('./create_edit_page.js');
+        return create_edit_page;
     };
 
     this.searchBox = function(name) {
-        element(by.id('searchbox')).sendKeys(name);
+        return element(by.id('searchbox')).sendKeys(name);
     };
 
     this.searchRequest = function() {
@@ -22,7 +24,7 @@ var main_page = function() {
     };
 
     this.searchSubmit = function(){
-        element(by.id('searchsubmit')).click();
+        return element(by.id('searchsubmit')).click();
     };
 
     this.checkSearchResult = function(number) { //where number result in row

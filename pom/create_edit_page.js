@@ -3,15 +3,15 @@
 var create_edit_page = function() {
 
     this.addNewComputer = function() {
-        element(by.css('.btn.primary')).click();
+        return element(by.css('.btn.primary')).click();
     };
 
     this.inputName = function (name) {
-        element(by.id('name')).sendKeys(name);
+        return element(by.id('name')).sendKeys(name);
     };
 
     this.clearName = function(){
-        element(by.id('name')).clear();
+        return element(by.id('name')).clear();
     };
 
     this.getName = function (){
@@ -19,11 +19,11 @@ var create_edit_page = function() {
     };
 
     this.inputIntroduced = function(name){
-        element(by.id('introduced')).sendKeys(name);
+        return element(by.id('introduced')).sendKeys(name);
     };
 
     this.clearIntroduced = function() {
-        element(by.id('introduced')).clear();
+        return element(by.id('introduced')).clear();
     };
 
     this.getIntroduced = function(){
@@ -31,11 +31,11 @@ var create_edit_page = function() {
     };
 
     this.inputDiscontinued = function(name){
-        element(by.id('discontinued')).sendKeys(name);
+        return element(by.id('discontinued')).sendKeys(name);
     };
 
     this.clearDiscontinued = function() {
-        element(by.id('discontinued')).clear();
+        return element(by.id('discontinued')).clear();
     };
 
     this.getDiscontinued = function(){
@@ -51,7 +51,7 @@ var create_edit_page = function() {
     };
 
     this.deleteComputer = function () {
-        element(by.css('.btn.danger')).click();
+        return element(by.css('.btn.danger')).click();
     };
 };
 
