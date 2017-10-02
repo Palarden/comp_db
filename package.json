@@ -1,0 +1,19 @@
+{
+  "name": "comp_db",
+  "version": "1.0.0",
+  "description": "some autotests using js+protractor",
+  "main": "conf.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Palarden/comp_db.git"
+  },
+  "author": "Igor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Palarden/comp_db/issues"
+  },
+  "homepage": "https://github.com/Palarden/comp_db#readme"
+}
