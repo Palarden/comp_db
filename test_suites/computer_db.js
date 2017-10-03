@@ -27,6 +27,10 @@ describe('Computer Database', function() {
         expect(main_page.searchAnyComputer(browser.params.properties.edit_name, 1)).toEqual(main_page.searchRequest()); //expect(browser.getCurrentUrl()).toEqual('http://computer-database.herokuapp.com/computers' + '?f=' + computer_name);
     });
 
+    it('check values', function () {
+        main_page.searchLuckyComputer(browser.params.properties.edit_name, 1);
+        create_edit_page.getComputerValues()
+    });
 
     it ('should delete created computers', function () {
         main_page.searchLuckyComputer(browser.params.properties.edit_name, 1);

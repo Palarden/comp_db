@@ -25,12 +25,20 @@ var create_edit_page = function() {
     };
 
     this.getComputerValues = function () {
-        return element(by.id('name')).getAttribute('value').then(function () {
+        return element(by.id('name')).getAttribute('value').then(function (value) {
+            return expect (value).toEqual(browser.params.properties.edit_name)
+        }).then(function () {
             return element(by.id('introduced')).getAttribute('value')
+        }).then(function (value) {
+            return expect (value).toEqual(browser.params.properties.introduceDate)
         }).then(function () {
             return element(by.id('discontinued')).getAttribute('value')
+        }).then(function (value) {
+            return expect (value).toEqual(browser.params.properties.discontinuedDate)
         }).then(function () {
             return element(by.css('option:checked')).getAttribute('text')
+        }).then(function (value) {
+            return expect (value).toEqual('Cray')
         })
     };
 
