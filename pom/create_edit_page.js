@@ -30,11 +30,11 @@ var create_edit_page = function() {
         }).then(function () {
             return element(by.id('introduced')).getAttribute('value')
         }).then(function (value) {
-            return expect (value).toEqual(browser.params.properties.introduceDate)
+            return expect (value).toEqual(browser.params.properties.edit_introduceDate)
         }).then(function () {
             return element(by.id('discontinued')).getAttribute('value')
         }).then(function (value) {
-            return expect (value).toEqual(browser.params.properties.discontinuedDate)
+            return expect (value).toEqual(browser.params.properties.edit_discontinuedDate)
         }).then(function () {
             return element(by.css('option:checked')).getAttribute('text')
         }).then(function (value) {

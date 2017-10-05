@@ -1,13 +1,17 @@
+'use strict';
+
 exports.config = {
     directConnect: true,
 
     baseUrl: 'http://computer-database.herokuapp.com/computers',
 
-    framework: 'jasmine',
+    framework: 'custom', // set to "custom" instead of cucumber
+
+    frameworkPath: require.resolve('protractor-cucumber-framework'),
 
     seleniumAddress: 'http://localhost:4444/wd/hub',
 
-    specs: ['test_suites/computer_db.js'],
+    specs: ['features/basicStep.feature'],  // Specs here are the cucumber feature files],
 
     params: {
         properties: {
@@ -19,6 +23,10 @@ exports.config = {
             edit_discontinuedDate: '2017-09-27',
             company_number: '31'
         }
+    },
+
+    cucumberOpts: {
+        require: ['features/step_definitions/basicSteps.js']
     },
 
     onPrepare: function() {
