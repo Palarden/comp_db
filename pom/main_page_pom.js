@@ -1,7 +1,5 @@
 "use strict";
 
-var create_edit_page =  require('./create_edit_page.js');
-
 var main_page = function() {
 
     this.get = function () {
@@ -33,5 +31,10 @@ var main_page = function() {
         return element(by.id('searchbox')).getAttribute('value')//.then(function(text) {
     };
 
+    this.checkAlertMessageText = function (message) {
+        return $('.alert-message.warning').getText('text').then(function(text) {
+            return expect(text).to.equal(message)
+        });
+    }
 };
     module.exports = new main_page();

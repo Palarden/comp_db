@@ -21,7 +21,10 @@ exports.config = {
             edit_introduceDate: '2007-11-06',
             discontinuedDate: '2010-11-01',
             edit_discontinuedDate: '2017-09-27',
-            company_number: '31'
+            company_number: '31',
+            alert_created: 'Done! Computer Cray Jaguar has been created',
+            alert_edited: 'Done! Computer Cray XT5 has been updated',
+            alert_deleted: 'Done! Computer has been deleted'
         }
     },
 
@@ -32,5 +35,7 @@ exports.config = {
     onPrepare: function() {
         browser.waitForAngularEnabled(false);
         browser.driver.manage().window().maximize();
+        //protractor.main_page = require('/pom/main_page_pom.js');
+        //protractor.create_edit_page = require('/pom/create_edit_page.js')
     }
 };

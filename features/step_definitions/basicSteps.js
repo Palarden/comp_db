@@ -5,8 +5,8 @@ var chai = require('chai'),
     expect = chai.expect;
 chai.use(chaiAsPromised);
 
-var main_page = require('../../pom/main_page_pom');
-var create_edit_page = require('../../pom/create_edit_page');
+var main_page = require('../pom/main_page_pom.js');
+var create_edit_page = require('/pom/create_edit_page.js')
 
 module.exports = function() {
 
@@ -26,7 +26,7 @@ module.exports = function() {
     });
 
     this.Then(/^New computer where added$/, function() {
-        expect(main_page.searchAnyComputer(browser.params.properties.name, 1)).to.eventually.equal(main_page.searchRequest());
+        main_page.checkAlertMessageText(browser.params.properties.alert_created);
     });
 
     this.When(/^I search computer in grid filtered by name$/, function() {
@@ -50,6 +50,7 @@ module.exports = function() {
     });
 
     this.Then(/^Computers values was edited$/, function() {
+        main_page.checkAlertMessageText(browser.params.properties.alert_edited);
         main_page.searchLuckyComputer(browser.params.properties.edit_name, 1);
         create_edit_page.getComputerValues();
     });
@@ -59,6 +60,6 @@ module.exports = function() {
     });
 
     this.Then(/^Computer was deleted and not present in grid$/, function() {
-        expect(main_page.searchAnyComputer(browser.params.properties.name, 1)).to.not.eventually.equal(main_page.searchRequest());
+        main_page.checkAlertMessageText(browser.params.properties.alert_deleted);
     });
 };
