@@ -55,7 +55,7 @@ module.exports = function() {
 
     this.Then(/^Computers values was edited$/, function() {
         main_page.searchLuckyComputer(browser.params.properties.edit_name, 1);
-        //create_edit_page.getComputerValues();
+        create_edit_page.getComputerValues();
     });
 
     this.When(/^I delete computer$/, function() {

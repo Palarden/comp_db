@@ -1,5 +1,11 @@
 "use strict";
 
+var chai = require('chai'),
+    chaiAsPromised = require('chai-as-promised'),
+    expect = chai.expect;
+chai.use(chaiAsPromised);
+
+
 var create_edit_page = function() {
 
 
@@ -28,19 +34,19 @@ var create_edit_page = function() {
 
     this.getComputerValues = function () {
         return element(by.id('name')).getAttribute('value').then(function (value) {
-            return expect (value).toEqual(browser.params.properties.edit_name)
+            return expect (value).to.equal(browser.params.properties.edit_name)
         }).then(function () {
             return element(by.id('introduced')).getAttribute('value')
         }).then(function (value) {
-            return expect (value).toEqual(browser.params.properties.edit_introduceDate)
+            return expect (value).to.equal(browser.params.properties.edit_introduceDate)
         }).then(function () {
             return element(by.id('discontinued')).getAttribute('value')
         }).then(function (value) {
-            return expect (value).toEqual(browser.params.properties.edit_discontinuedDate)
+            return expect (value).to.equal(browser.params.properties.edit_discontinuedDate)
         }).then(function () {
             return element(by.css('option:checked')).getAttribute('text')
         }).then(function (value) {
-            return expect (value).toEqual('Cray')
+            return expect (value).to.equal('Cray')
         })
     };
 

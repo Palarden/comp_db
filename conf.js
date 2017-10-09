@@ -5,13 +5,13 @@ exports.config = {
 
     baseUrl: 'http://computer-database.herokuapp.com/computers',
 
-    framework: 'custom', // set to "custom" instead of cucumber
+    framework: 'custom',
 
     frameworkPath: require.resolve('protractor-cucumber-framework'),
 
     seleniumAddress: 'http://localhost:4444/wd/hub',
 
-    specs: ['features/basicStep.feature'],  // Specs here are the cucumber feature files],
+    specs: ['features/basicStep.feature'],
 
     params: {
         properties: {
