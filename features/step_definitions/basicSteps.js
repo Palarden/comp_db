@@ -26,8 +26,10 @@ module.exports = function() {
     });
 
     this.Then(/^New computer where added$/, function() {
-        main_page.alertMessagesText().getText().then(alert => expect(alert).to.include('Done! Computer Cray Jaguar has been created'));
-        //expect(main_page.searchAnyComputer(browser.params.properties.name, 1)).to.eventually.equal(main_page.searchRequest());
+        main_page.alertMessagesText().getText().then(function(text){
+            expect(text).to.include('Done! Computer Cray Jaguar has been created')
+            //expect(main_page.searchAnyComputer(browser.params.properties.name, 1)).to.eventually.equal(main_page.searchRequest());
+        });
     });
 
     this.When(/^I search computer in grid filtered by name$/, function() {
