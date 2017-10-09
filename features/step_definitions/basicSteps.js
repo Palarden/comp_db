@@ -26,19 +26,20 @@ module.exports = function() {
     });
 
     this.Then(/^New computer where added$/, function() {
-        expect(main_page.searchAnyComputer(browser.params.properties.name, 1)).to.eventually.equal(main_page.searchRequest());
+        main_page.alertMessagesText().getText().then(alert => expect(alert).to.include('Done! Computer Cray Jaguar has been created'));
+        //expect(main_page.searchAnyComputer(browser.params.properties.name, 1)).to.eventually.equal(main_page.searchRequest());
     });
 
     this.When(/^I search computer in grid filtered by name$/, function() {
         main_page.searchAnyComputer(browser.params.properties.name);
     });
 
-    this.Then(/^I get results filtered by name$/, function() {
-        expect(main_page.searchAnyComputer(browser.params.properties.name, 1)).to.eventually.equal(main_page.searchRequest());
+    this.Then(/^I get results filtered by name$/, function(callback) {
+        expect(main_page.checkSearchResult()).to.eventually.equal(browser.params.properties.name).and.notify(callback);
     });
 
-    this.Given(/^I filtered computer by name and opened needed one$/, function(){
-        main_page.searchLuckyComputer(browser.params.properties.name, 1);
+    this.Given(/^I filtered computer by "([^"]*)" and opened needed one$/, function(attr){
+        main_page.searchLuckyComputer(attr, 1);
     });
 
     this.When(/^I edit computers values and save them$/, function() {
@@ -47,11 +48,12 @@ module.exports = function() {
             browser.params.properties.edit_introduceDate,
             browser.params.properties.edit_discontinuedDate,
             browser.params.properties.company_number);
+        main_page.alertMessagesText().getText().then(alert => expect(alert).to.include('Done! Computer Cray XT5 has been updated'));
     });
 
     this.Then(/^Computers values was edited$/, function() {
         main_page.searchLuckyComputer(browser.params.properties.edit_name, 1);
-        create_edit_page.getComputerValues();
+        //create_edit_page.getComputerValues();
     });
 
     this.When(/^I delete computer$/, function() {
@@ -59,6 +61,6 @@ module.exports = function() {
     });
 
     this.Then(/^Computer was deleted and not present in grid$/, function() {
-        expect(main_page.searchAnyComputer(browser.params.properties.name, 1)).to.not.eventually.equal(main_page.searchRequest());
+        main_page.alertMessagesText().getText().then(alert => expect(alert).to.include('Done! Computer has been deleted'));
     });
 };

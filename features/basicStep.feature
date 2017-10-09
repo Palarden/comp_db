@@ -13,11 +13,11 @@ Feature: CRUD check for computers grid
     Then  I get results filtered by name
 
   Scenario: Edit values for created computer
-    Given  I filtered computer by name and opened needed one
+    Given  I filtered computer by "Cray Jaguar" and opened needed one
     When   I edit computers values and save them
     Then   Computers values was edited
 
   Scenario: Delete created computer
-    Given I filtered computer by name and opened needed one
+    Given I filtered computer by "Cray XT5" and opened needed one
     When  I delete computer
     Then  Computer was deleted and not present in grid

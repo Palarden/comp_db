@@ -2,6 +2,8 @@
 
 var create_edit_page = function() {
 
+
+
     this.inputComputerProperties = function (name, introduceDate, discontinuedDate, company_number) {
         return element(by.id('name')).sendKeys(name).then(function () {
             return element(by.id('introduced')).sendKeys(introduceDate)
