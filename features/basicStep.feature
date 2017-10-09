@@ -12,6 +12,7 @@ Feature: CRUD check for computers grid
     When  I search computer in grid filtered by name
     Then  I get results filtered by name
 
+
   Scenario: Edit values for created computer
     Given  I filtered computer by name and opened needed one
     When   I edit computers values and save them

@@ -1,5 +1,12 @@
 "use strict";
 
+var create_edit_page =  require('./create_edit_page.js');
+
+var chai = require('chai'),
+    chaiAsPromised = require('chai-as-promised'),
+    expect = chai.expect;
+chai.use(chaiAsPromised);
+
 var main_page = function() {
 
     this.get = function () {

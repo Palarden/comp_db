@@ -5,8 +5,8 @@ var chai = require('chai'),
     expect = chai.expect;
 chai.use(chaiAsPromised);
 
-var main_page = require('../pom/main_page_pom.js');
-var create_edit_page = require('/pom/create_edit_page.js')
+var main_page = require('../../pom/main_page_pom');
+var create_edit_page = require('../../pom/create_edit_page');
 
 module.exports = function() {
 
@@ -25,7 +25,7 @@ module.exports = function() {
             browser.params.properties.company_number);
     });
 
-    this.Then(/^New computer where added$/, function() {
+    this.Then(/^New computer where added$/, function(name) {
         main_page.checkAlertMessageText(browser.params.properties.alert_created);
     });
 
@@ -47,10 +47,10 @@ module.exports = function() {
             browser.params.properties.edit_introduceDate,
             browser.params.properties.edit_discontinuedDate,
             browser.params.properties.company_number);
+        main_page.checkAlertMessageText(browser.params.properties.alert_edited);
     });
 
-    this.Then(/^Computers values was edited$/, function() {
-        main_page.checkAlertMessageText(browser.params.properties.alert_edited);
+    this.Then(/^Computers values was edited$/, function(name, int) {
         main_page.searchLuckyComputer(browser.params.properties.edit_name, 1);
         create_edit_page.getComputerValues();
     });
