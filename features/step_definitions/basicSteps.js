@@ -48,7 +48,9 @@ module.exports = function() {
             browser.params.properties.edit_introduceDate,
             browser.params.properties.edit_discontinuedDate,
             browser.params.properties.company_number);
-        main_page.alertMessagesText().getText().then(alert => expect(alert).to.include('Done! Computer Cray XT5 has been updated'));
+        main_page.alertMessagesText().getText().then(function(text) {
+            expect(text).to.include('Done! Computer Cray XT5 has been updated')
+        });
     });
 
     this.Then(/^Computers values was edited$/, function() {
@@ -61,6 +63,8 @@ module.exports = function() {
     });
 
     this.Then(/^Computer was deleted and not present in grid$/, function() {
-        main_page.alertMessagesText().getText().then(alert => expect(alert).to.include('Done! Computer has been deleted'));
+        main_page.alertMessagesText().getText().then(function(text) {
+            expect(text).to.include('Done! Computer has been deleted')
+        });
     });
 };
