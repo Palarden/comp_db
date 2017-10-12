@@ -1,47 +1,61 @@
 "use strict";
 
-var create_edit_page =  require('./create_edit_page.js');
+let create_edit_page = require('./create_edit_page.js');
 
-var chai = require('chai'),
+const chai = require('chai'),
     chaiAsPromised = require('chai-as-promised'),
     expect = chai.expect;
 chai.use(chaiAsPromised);
 
-var main_page = function() {
+let main_page = function () {
 
-    this.get = function () {
+    this.get = () => {
         browser.get('/');
     };
 
-    this.addComputer = function() {
+    this.addComputer = () => {
         element(by.id('add')).click();
         return create_edit_page;
     };
 
-    this.searchLuckyComputer = function (name, number) {
-      return element(by.id('searchbox')).sendKeys(name).then(function(){
-          return element(by.id('searchsubmit')).click()
-      }).then(function() {
-          return element(by.className('computers zebra-striped')).$('#main > table > tbody > tr:nth-child('+number+') > td:nth-child(1) > a').click()
-      })
-    };
-
-    this.searchAnyComputer = function (name, number) {
-        return element(by.id('searchbox')).sendKeys(name).then(function(){
+    this.searchLuckyComputer = (name, number) => {
+        return element(by.id('searchbox')).sendKeys(name).then(function () {
             return element(by.id('searchsubmit')).click()
-        }).then(function() {
-            return element(by.className('computers zebra-striped')).$('#main > table > tbody > tr:nth-child('+number+') > td:nth-child(1) > a').getText()
+        }).then(function () {
+            return element(by.className('computers zebra-striped')).$('#main > table > tbody > tr:nth-child(' + number + ') > td:nth-child(1) > a').click()
         })
     };
 
-    this.searchRequest = function() {
+    this.searchAnyComputer = (name, number) => {
+        return element(by.id('searchbox')).sendKeys(name).then(function () {
+            return element(by.id('searchsubmit')).click()
+        }).then(function () {
+            return element(by.className('computers zebra-striped')).$('#main > table > tbody > tr:nth-child(' + number + ') > td:nth-child(1) > a')
+        })
+    };
+
+    this.searchRequest = () => {
         return element(by.id('searchbox')).getAttribute('value')//.then(function(text) {
     };
 
-    this.checkAlertMessageText = function (message) {
-        return $('.alert-message.warning').getText('text').then(function(text) {
+
+    this.checkAlertMessageText = (message) => {
+        return $('.alert-message.warning').getText('text').then(function (text) {
             return expect(text).to.equal(message)
         });
+    };
+
+    this.checkSearchResult = () => {
+        //return expect(element(by.linkText(browser.params.properties.name).getTagName()).toBe('a'));
+        return $('#main > table > tbody > tr:nth-child(1) > td:nth-child(1) > a').getText()
+    };
+
+    this.alertMessagesText = () => {
+        return $('.alert-message');
+    };
+
+    this.emptyGridWarning = () => {
+        return $('#main > div.well > em').getText()
     }
 };
-    module.exports = new main_page();
+module.exports = new main_page();

@@ -5,13 +5,13 @@ exports.config = {
 
     baseUrl: 'http://computer-database.herokuapp.com/computers',
 
-    framework: 'custom', // set to "custom" instead of cucumber
+    framework: 'custom',
 
     frameworkPath: require.resolve('protractor-cucumber-framework'),
 
     seleniumAddress: 'http://localhost:4444/wd/hub',
 
-    specs: ['features/basicStep.feature'],  // Specs here are the cucumber feature files],
+    specs: ['features/basicStep.feature'],
 
     params: {
         properties: {
@@ -32,7 +32,7 @@ exports.config = {
         require: ['features/step_definitions/basicSteps.js']
     },
 
-    onPrepare: function() {
+    onPrepare: function () {
         browser.waitForAngularEnabled(false);
         browser.driver.manage().window().maximize();
         //protractor.main_page = require('/pom/main_page_pom.js');
