@@ -8,13 +8,15 @@ chai.use(chaiAsPromised);
 let create_edit_page = function () {
 
 
-    this.inputComputerProperties = (name, introduceDate, discontinuedDate, company_number) => {
-        return element(by.id('name')).sendKeys(name).then(() => {
-            return element(by.id('introduced')).sendKeys(introduceDate)
+    this.inputComputerProperties = (table) => {
+        let valueFromTable = [];
+        valueFromTable = table.hashes();
+        return element(by.id('name')).sendKeys(valueFromTable["name"]).then(() => {
+            return element(by.id('introduced')).sendKeys(valueFromTable["introduced_date"])
         }).then(() => {
-            return element(by.id('discontinued')).sendKeys(discontinuedDate)
+            return element(by.id('discontinued')).sendKeys(valueFromTable["discontinued_date"])
         }).then(() => {
-            return element(by.id('company')).$('[value="' + company_number + '"]').click()
+            return element(by.id('company')).$('[value="' + (valueFromTable["company_number"]) + '"]').click()
         }).then(() => {
             return element(by.css('.btn.primary')).click();
         })

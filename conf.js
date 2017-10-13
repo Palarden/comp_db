@@ -11,7 +11,7 @@ exports.config = {
 
     seleniumAddress: 'http://localhost:4444/wd/hub',
 
-    specs: ['features/basicStep.feature'],
+    specs: ['features/fullStep.feature'],
 
     params: {
         properties: {
@@ -29,7 +29,7 @@ exports.config = {
     },
 
     cucumberOpts: {
-        require: ['features/step_definitions/basicSteps.js']
+        require: ['features/step_definitions/fullStep.js']
     },
 
     onPrepare: function () {
