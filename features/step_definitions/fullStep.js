@@ -18,8 +18,6 @@ module.exports = function () {
     });
 
     this.When(/^I input and submit computer values:$/, function (table) {
-        let valueFromTable = [];
-        valueFromTable = table.hashes();
         return create_edit_page.inputComputerProperties(table)
         })
     ;
