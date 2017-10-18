@@ -19,8 +19,7 @@ module.exports = function () {
 
     this.When(/^I input and submit computer values:$/, function (table) {
         return create_edit_page.inputComputerProperties(table);
-        })
-    ;
+    });
 
     this.When(/^Alert message "([^"]*)" appeared$/, (alert_text) => {
         return main_page.alertMessagesText().getText().then((text) => {

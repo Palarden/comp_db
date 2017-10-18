@@ -2,11 +2,6 @@
 
 let create_edit_page = require('./create_edit_page.js');
 
-const chai = require('chai'),
-    chaiAsPromised = require('chai-as-promised'),
-    expect = chai.expect;
-chai.use(chaiAsPromised);
-
 let main_page = function () {
 
     this.get = () => {

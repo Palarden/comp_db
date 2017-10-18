@@ -17,7 +17,6 @@ let create_edit_page = function () {
         }).then(() => {
             return element(by.id('company')).$('[value="' + (computerValues['company_number']) + '"]').click()
         }).then(() => {
-            browser.pause(5000);
             return element(by.css('.btn.primary')).click();
         })
     };
