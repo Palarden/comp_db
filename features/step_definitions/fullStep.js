@@ -18,27 +18,31 @@ module.exports = function () {
     });
 
     this.When(/^I input and submit computer values:$/, function (table) {
-        return create_edit_page.inputComputerProperties(table)
+        return create_edit_page.inputComputerProperties(table);
         })
     ;
 
-    this.When(/^Alert message (.*) appeared$/, (alert_text) => {
+    this.When(/^Alert message "([^"]*)" appeared$/, (alert_text) => {
         return main_page.alertMessagesText().getText().then((text) => {
             return expect(text).to.include(alert_text)
             //expect(main_page.searchAnyComputer(browser.params.properties.name, 1)).to.eventually.equal(main_page.searchRequest());
         });
     });
 
-    this.When(/^I searched computer in grid by "([^"]*)"$/, (name) => {
+    this.When(/^I searched computer in grid by "([^"]*)" name$/, (name) => {
         return main_page.searchAnyComputer(name);
     });
 
-    this.When(/^I check that computer with "([^"]*)" displayed$/, (name) => {
+    this.When(/^I check that computer with "([^"]*)" name displayed$/, (name) => {
         return expect(main_page.checkSearchResult()).to.eventually.equal(name);
     });
 
     this.When(/^I filtered computer by "([^"]*)" and opened needed one$/, (attr) => {
         return main_page.searchLuckyComputer(attr, 1);
+    });
+
+    this.When(/^I opened "([^"]*)" result in grid$/, (number) => {
+        return main_page.openVariousResult(number);
     });
 
     this.When(/^I clear computer values$/, () => {

@@ -39,11 +39,16 @@ let main_page = function () {
     };
 
 
-    this.checkAlertMessageText = (message) => {
+    /*this.checkAlertMessageText = (message) => {
         return $('.alert-message.warning').getText('text').then(function (text) {
             return expect(text).to.equal(message)
         });
+    };*/
+
+    this.openVariousResult = (number) => {
+        return element(by.className('computers zebra-striped')).$('#main > table > tbody > tr:nth-child(' + number + ') > td:nth-child(1) > a').click()
     };
+
 
     this.checkSearchResult = () => {
         //return expect(element(by.linkText(browser.params.properties.name).getTagName()).toBe('a'));
