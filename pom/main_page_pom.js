@@ -33,7 +33,6 @@ let main_page = function () {
         return element(by.id('searchbox')).getAttribute('value')//.then(function(text) {
     };
 
-
     /*this.checkAlertMessageText = (message) => {
         return $('.alert-message.warning').getText('text').then(function (text) {
             return expect(text).to.equal(message)

@@ -1,19 +1,37 @@
-# **comp_db**
+# ComputerDB CRUD
+Simple protractor-cucumber autotests for checking CRUD functionality for ComputerDB
+Resource: http://computer-database.herokuapp.com/computers
 
-Running the tests Protractor requires a selenium server to run.
+## Getting Started
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-Before installing please review devDependencies in package.json to set up correct version.
+### Prerequisites
+* Install NodeJS (v6.x.x or later)
+* Install Protractor Globally and update WebDriver
+```
+npm install -g protractor
+webdriver-manager update
+```
+* Checkout from GIT repositories
+```
+git clone -b working_pickle https://github.com/Palarden/comp_db.git
+```
+* Install dependencies from package.json
+```
+npm insall      //in project directory
+```
+* Start up a server with
+```
+webdriver-manager start
+```
 
-# **Setup project:**
- * Install NodeJS (v6.x.x or later)
- * Install Protractor & CucumberJS globally with: *npm install -g protractor* & *npm install -g cucumber*
- * Install protractor-cucumber-framework with: *npm install protractor-cucumber-framework*
- * Update webdriver: *webdriver-manager update*
- * Clone project: *https://github.com/Palarden/comp_db/tree/dev_cucumber*
- * Start up a server with: *webdriver-manager start*
- * Run the test with: *protractor conf.js*
+##Running tests
+Run the test with: 
+```
+protractor conf.js      //in project directory
+```
 
-# **Cover functionality:**
+### Cover functionality:
  * Create new Computer
  * Find computer by name
  * Edit created computer
