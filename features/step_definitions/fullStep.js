@@ -13,7 +13,7 @@ module.exports = function () {
         return main_page.addComputer();
     });
 
-    this.When(/^I input and submit computer values:$/, function (table) {
+    this.When(/^I input and submit computer values:$/, (table) => {
         return create_edit_page.inputComputerProperties(table);
     });
 
@@ -48,7 +48,7 @@ module.exports = function () {
         return create_edit_page.deleteComputer();
     });
 
-    this.When(/^I edit and submit computer values:$/, function (table) {
+    this.When(/^I edit and submit computer values:$/,  (table) => {
         return create_edit_page.inputComputerProperties(table);
     });
 };
