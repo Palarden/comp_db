@@ -1,9 +1,10 @@
 "use strict";
 
-var chai = require('chai'),
-    chaiAsPromised = require('chai-as-promised'),
-    expect = chai.expect;
-chai.use(chaiAsPromised);
+// var chai = require('chai'),
+//     chaiAsPromised = require('chai-as-promised'),
+//     expect = chai.expect;
+// chai.use(chaiAsPromised);
+var world =  require('../features/support/world.js');
 
 var create_edit_page = function() {
 
@@ -33,19 +34,19 @@ var create_edit_page = function() {
 
     this.getComputerValues = function () {
         return element(by.id('name')).getAttribute('value').then(function (value) {
-            return expect (value).to.equal(browser.params.properties.edit_name)
+            return world.expect (value).to.equal(browser.params.properties.edit_name)
         }).then(function () {
             return element(by.id('introduced')).getAttribute('value')
         }).then(function (value) {
-            return expect (value).to.equal(browser.params.properties.edit_introduceDate)
+            return world.expect (value).to.equal(browser.params.properties.edit_introduceDate)
         }).then(function () {
             return element(by.id('discontinued')).getAttribute('value')
         }).then(function (value) {
-            return expect (value).to.equal(browser.params.properties.edit_discontinuedDate)
+            return world.expect (value).to.equal(browser.params.properties.edit_discontinuedDate)
         }).then(function () {
             return element(by.css('option:checked')).getAttribute('text')
         }).then(function (value) {
-            return expect (value).to.equal('Cray')
+            return world.expect (value).to.equal('Cray')
         })
     };
 
