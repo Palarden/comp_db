@@ -25,7 +25,7 @@ npm insall      //in project directory
 webdriver-manager start
 ```
 
-##Running tests
+## Running tests
 Run the test with: 
 ```
 protractor conf.js      //in project directory
