@@ -1,4 +1,7 @@
 'use strict';
+const chai = require("chai");
+const chaiAsPromised = require("chai-as-promised");
+chai.use(chaiAsPromised);
 
 exports.config = {
     directConnect: true,
@@ -22,12 +25,16 @@ exports.config = {
     },
 
     cucumberOpts: {
-        require: ['features/step_definitions/fullStep.js']
+        strict: true,
+        require: ['features/step_definitions/fullStep.js', 'features/support/reporter.js'],
+        format: 'pretty',
+        tags: ['@AllureScenario']
     },
 
     onPrepare: function () {
         browser.waitForAngularEnabled(false);
         browser.driver.manage().window().maximize();
+        global.expect = chai.expect;
         //protractor.main_page = require('/pom/main_page_pom.js');
         //protractor.create_edit_page = require('/pom/create_edit_page.js')
     }

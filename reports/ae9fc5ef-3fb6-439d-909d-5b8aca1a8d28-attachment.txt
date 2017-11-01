@@ -1,0 +1,2 @@
+| name        |introduced_date |discontinued_date |company_number |
+| Cray Jaguar |2009-11-01      |2010-11-01        |31             |

@@ -1,10 +1,5 @@
 "use strict";
 
-const chai = require('chai'),
-    chaiAsPromised = require('chai-as-promised'),
-    expect = chai.expect;
-chai.use(chaiAsPromised);
-
 let create_edit_page = function () {
 
     this.inputComputerProperties = (table) => {

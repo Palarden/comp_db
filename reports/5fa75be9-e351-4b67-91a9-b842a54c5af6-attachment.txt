@@ -1,0 +1,2 @@
+| name     |introduced_date |discontinued_date |company_number |
+| Cray XT5 |2007-11-06      |2010-11-01        |31             |

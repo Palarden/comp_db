@@ -1,6 +1,5 @@
 'use strict';
 
-let support = require ('../support/support');
 let main_page = require('../../pom/main_page_pom');
 let create_edit_page = require('../../pom/create_edit_page');
 
@@ -19,7 +18,7 @@ module.exports = function () {
 
     this.When(/^Alert message "([^"]*)" appeared$/, (alert_text) => {
         return main_page.alertMessagesText().getText().then((text) => {
-            return support.expect(text).to.include(alert_text)
+            return expect(text).to.include(alert_text)
             //expect(main_page.searchAnyComputer(browser.params.properties.name, 1)).to.eventually.equal(main_page.searchRequest());
         });
     });
@@ -29,7 +28,7 @@ module.exports = function () {
     });
 
     this.When(/^I check that computer with "([^"]*)" name displayed$/, (name) => {
-        return support.expect(main_page.checkSearchResult()).to.eventually.equal(name);
+        return expect(main_page.checkSearchResult()).to.eventually.equal(name);
     });
 
     this.When(/^I filtered computer by "([^"]*)" and opened needed one$/, (attr) => {

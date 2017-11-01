@@ -15,7 +15,7 @@
   "bugs": {
     "url": "https://github.com/Palarden/comp_db/issues"
   },
-  "homepage": "https://github.com/Palarden/comp_db#readme",
+  "homepage": "https://github.com/Palarden/comp_db",
   "dependencies": {},
   "devDependencies": {
     "allure-commandline": "^2.3.5",

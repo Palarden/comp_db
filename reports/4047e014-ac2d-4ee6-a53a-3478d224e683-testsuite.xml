@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns2:test-suite xmlns:ns2="urn:model.allure.qatools.yandex.ru" start="1509458728679" stop="1509458734120">
+	<name>CRUD check for computers grid</name>
+	<title>CRUD check for computers grid</title>
+	<test-cases>
+		<test-case start="1509458728682" stop="1509458734119" status="passed">
+			<name>Create, find and delete one computer</name>
+			<title>Create, find and delete one computer</title>
+			<description></description>
+			<labels>
+			</labels>
+			<parameters>
+			</parameters>
+			<steps>
+				<step start="1509458728683" stop="1509458728688" status="passed">
+					<name>I get to the main page</name>
+					<title>I get to the main page</title>
+					<attachments>
+					</attachments>
+					<steps>
+					</steps>
+				</step>
+				<step start="1509458728689" stop="1509458728701" status="passed">
+					<name>I have opened page &apos;Create New Computer&apos;</name>
+					<title>I have opened page &apos;Create New Computer&apos;</title>
+					<attachments>
+					</attachments>
+					<steps>
+					</steps>
+				</step>
+				<step start="1509458728701" stop="1509458731726" status="passed">
+					<name>I input and submit computer values:</name>
+					<title>I input and submit computer values:</title>
+					<attachments>
+						<attachment title="Step: &quot;I input and submit computer values:&quot; dataTable" source="73ec817f-ea6d-471d-94f7-f65502e8a8b4-attachment.txt" type="text/plain" size="136"/>
+					</attachments>
+					<steps>
+					</steps>
+				</step>
+				<step start="1509458731727" stop="1509458731779" status="passed">
+					<name>Alert message &quot;Done! Computer Cray Jaguar has been created&quot; appeared</name>
+					<title>Alert message &quot;Done! Computer Cray Jaguar has been created&quot; appeared</title>
+					<attachments>
+					</attachments>
+					<steps>
+					</steps>
+				</step>
+				<step start="1509458731779" stop="1509458732101" status="passed">
+					<name>I searched computer in grid by &quot;Cray Jaguar&quot; name</name>
+					<title>I searched computer in grid by &quot;Cray Jaguar&quot; name</title>
+					<attachments>
+					</attachments>
+					<steps>
+					</steps>
+				</step>
+				<step start="1509458732102" stop="1509458732154" status="passed">
+					<name>I check that computer with &quot;Cray Jaguar&quot; name displayed</name>
+					<title>I check that computer with &quot;Cray Jaguar&quot; name displayed</title>
+					<attachments>
+					</attachments>
+					<steps>
+					</steps>
+				</step>
+				<step start="1509458732154" stop="1509458732399" status="passed">
+					<name>I opened &quot;1&quot; result in grid</name>
+					<title>I opened &quot;1&quot; result in grid</title>
+					<attachments>
+					</attachments>
+					<steps>
+					</steps>
+				</step>
+				<step start="1509458732399" stop="1509458732561" status="passed">
+					<name>I clear computer values</name>
+					<title>I clear computer values</title>
+					<attachments>
+					</attachments>
+					<steps>
+					</steps>
+				</step>
+				<step start="1509458732561" stop="1509458733173" status="passed">
+					<name>I input and submit computer values:</name>
+					<title>I input and submit computer values:</title>
+					<attachments>
+						<attachment title="Step: &quot;I input and submit computer values:&quot; dataTable" source="2031bf8b-c1f3-4995-8ae9-b89b673fc92e-attachment.txt" type="text/plain" size="130"/>
+					</attachments>
+					<steps>
+					</steps>
+				</step>
+				<step start="1509458733173" stop="1509458733216" status="passed">
+					<name>Alert message &quot;Done! Computer Cray XT5 has been updated&quot; appeared</name>
+					<title>Alert message &quot;Done! Computer Cray XT5 has been updated&quot; appeared</title>
+					<attachments>
+					</attachments>
+					<steps>
+					</steps>
+				</step>
+				<step start="1509458733216" stop="1509458733477" status="passed">
+					<name>I searched computer in grid by &quot;Cray XT5&quot; name</name>
+					<title>I searched computer in grid by &quot;Cray XT5&quot; name</title>
+					<attachments>
+					</attachments>
+					<steps>
+					</steps>
+				</step>
+				<step start="1509458733478" stop="1509458733512" status="passed">
+					<name>I check that computer with &quot;Cray XT5&quot; name displayed</name>
+					<title>I check that computer with &quot;Cray XT5&quot; name displayed</title>
+					<attachments>
+					</attachments>
+					<steps>
+					</steps>
+				</step>
+				<step start="1509458733512" stop="1509458733731" status="passed">
+					<name>I opened &quot;1&quot; result in grid</name>
+					<title>I opened &quot;1&quot; result in grid</title>
+					<attachments>
+					</attachments>
+					<steps>
+					</steps>
+				</step>
+				<step start="1509458733731" stop="1509458734083" status="passed">
+					<name>I delete computer</name>
+					<title>I delete computer</title>
+					<attachments>
+					</attachments>
+					<steps>
+					</steps>
+				</step>
+				<step start="1509458734083" stop="1509458734118" status="passed">
+					<name>Alert message &quot;Done! Computer has been deleted&quot; appeared</name>
+					<title>Alert message &quot;Done! Computer has been deleted&quot; appeared</title>
+					<attachments>
+					</attachments>
+					<steps>
+					</steps>
+				</step>
+			</steps>
+			<attachments>
+			</attachments>
+		</test-case>
+	</test-cases>
+</ns2:test-suite>
